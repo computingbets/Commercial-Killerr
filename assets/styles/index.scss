@@ -1,2 +1,30 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.modal-body {
+   background-image: url('https://media.giphy.com/media/sCOqmzlHkzYmQ/giphy.gif');
+}
+
+.container {
+  background-image: url('http://cache2.asset-cache.net/xd/157367417.jpg?v=1&c=IWSAsset&k=2&d=62CA815BFB1CE4803563B1399100503173E7DAAD5CA53869742A9D70247ED2456D9B0702D02B4547');
+  color: red;
+}
+
+#nav-div {
+    height: 118px;
+}
+
+.behead {
+  font-family: 'Creepster', serif;
+  color: red;
+  font-size: 50px;
+}
+
+.optionsbtn {
+  color: red;
+}
+// #nav-options {
+//   color: red;
+// }
+// #nav-sign-in
+// #nav-sign-up
