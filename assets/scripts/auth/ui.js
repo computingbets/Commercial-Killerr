@@ -38,7 +38,7 @@ const channelInputSuccess = function (data) {
 };
 
 const getChannelSuccess = function (data) {
-  console.log('getChannelSuccess');
+  console.log(data);
   event.preventDefault();
 
   api.updateChannel(data)

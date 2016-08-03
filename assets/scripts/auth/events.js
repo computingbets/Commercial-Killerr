@@ -85,7 +85,7 @@ const onGetChannel = function (event) {
   console.log('get dat channel');
   event.preventDefault();
   //let data = getFormFields(event.target);
-  let channelTargeted = $('#indicator').text();
+  let channelTargeted = $('.commercial-button').text();
   api.getChannel(channelTargeted)
   .done(ui.getChannelSuccess)
   .fail(ui.failure);

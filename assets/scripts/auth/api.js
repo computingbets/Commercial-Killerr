@@ -56,11 +56,17 @@ const getChannel = function (channelTargeted) {
 };
 
 const updateChannel = function (data) {
+  console.log(data.channel.id);
   return $.ajax({
-    url: app.host + "/channels/" + data.id,
+    url: app.host + "/channels/" + data.channel.id,
     method: 'PATCH',
-    //data: ads: true
-
+    data: {
+      channel: {
+      "id": data.id,
+      "name": data.name,
+      "ads": true,
+      }
+    }
   });
 };
 // const getChannel =  function () {
