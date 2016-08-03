@@ -37,12 +37,29 @@ const channelInputSuccess = function (data) {
   //pass data.channel or data.id to onUpdateChannel
 };
 
-const getChannelSuccess = function (data) {
-  console.log(data);
+const updateChannelAdsSuccess = function () {
+  $('#indicator').css("background-color", "red");
+};
+
+const updateChannelProgSuccess = function () {
+  $('#indicator').css("background-color", "green");
+};
+
+const getChannelAdsSuccess = function (data) {
+  //console.log(data);
   event.preventDefault();
 
-  api.updateChannel(data)
-  .done(success())
+  api.updateChannelAds(data)
+  .done(updateChannelAdsSuccess())
+  .fail(failure());
+};
+
+const getChannelProgSuccess = function (data) {
+  //console.log(data);
+  event.preventDefault();
+
+  api.updateChannelProg(data)
+  .done(updateChannelProgSuccess())
   .fail(failure());
 };
 
@@ -52,5 +69,6 @@ module.exports = {
  signInSuccess,
  signOutSuccess,
  channelInputSuccess,
- getChannelSuccess,
+ getChannelAdsSuccess,
+ getChannelProgSuccess,
 };

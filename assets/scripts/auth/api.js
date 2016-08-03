@@ -47,7 +47,7 @@ const channelInput = function (data) {
   });
 };
 
-const getChannel = function (channelTargeted) {
+const getChannelAds = function (channelTargeted) {
   console.log(channelTargeted);
   return $.ajax({
     url: app.host + "/channels/" + channelTargeted,
@@ -55,7 +55,15 @@ const getChannel = function (channelTargeted) {
   });
 };
 
-const updateChannel = function (data) {
+const getChannelProg = function (channelTargeted) {
+  console.log(channelTargeted);
+  return $.ajax({
+    url: app.host + "/channels/" + channelTargeted,
+    method: 'GET',
+  });
+};
+
+const updateChannelAds = function (data) {
   console.log(data.channel.id);
   return $.ajax({
     url: app.host + "/channels/" + data.channel.id,
@@ -65,6 +73,21 @@ const updateChannel = function (data) {
       "id": data.id,
       "name": data.name,
       "ads": true,
+      }
+    }
+  });
+};
+
+const updateChannelProg = function (data) {
+  console.log(data.channel.id);
+  return $.ajax({
+    url: app.host + "/channels/" + data.channel.id,
+    method: 'PATCH',
+    data: {
+      channel: {
+      "id": data.id,
+      "name": data.name,
+      "ads": false,
       }
     }
   });
@@ -84,6 +107,8 @@ module.exports = {
   changePassword,
   channelInput,
   // commercialUpdate,
-  getChannel,
-  updateChannel,
+  getChannelAds,
+  getChannelProg,
+  updateChannelAds,
+  updateChannelProg,
 };
