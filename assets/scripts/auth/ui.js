@@ -29,17 +29,21 @@ const signOutSuccess = () => {
 const channelInputSuccess = function (data) {
   console.log(data.channel.name);
   $('#indicator').append(data.channel.name);
+  $('.commercial-body').prepend(handlebarsTemplate({data}));
+  //$('.commercial-button').on('click', onGetChannel);
+
   console.log(data);
 
   //pass data.channel or data.id to onUpdateChannel
 };
 
 const getChannelSuccess = function (data) {
-  console.log('getChannelSuccess')
-  $('.commercial-body').append(handlebarsTemplate({data}));
-  //api.updateChannel(data)
-  // .done(ui.success)
-  // .fail(ui.failure);
+  console.log('getChannelSuccess');
+  event.preventDefault();
+
+  api.updateChannel(data)
+  .done(success())
+  .fail(failure());
 };
 
 module.exports = {

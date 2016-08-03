@@ -82,6 +82,7 @@ const onChannelInput = function (event) {
 // };
 
 const onGetChannel = function (event) {
+  console.log('get dat channel');
   event.preventDefault();
   //let data = getFormFields(event.target);
   let channelTargeted = $('#indicator').text();
@@ -99,7 +100,7 @@ const addHandlers = () => {
  $('#nav-sign-in').on('click', onNavSignIn);
  $('#nav-options').on('click', onNavOptions);
  $('#channel-input').on('submit', onChannelInput);
- $('.commercial-button').on('click', onGetChannel);
+ $('body').on('click', '.commercial-button', onGetChannel);
  $('.program-button').on('click', onGetChannel);
  $('.extra-channel').on('submit', onGetChannel);
 };
