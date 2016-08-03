@@ -32,8 +32,29 @@
     <h1 class="behead">
       Commercial Killerr
     </h1>
-
-    <div class="commercial-body"
+    <form id="channel-input">
+      <fieldset>
+        <input type="text" name="channel[name]" placeholder="enter channel">
+        <input type="submit" value="submit">
+      </fieldset>
+    </form>
+    <div class="commercial-body">
+      <button class="commercial-button btn-danger">Commercial</button>
+      <button class="program-button btn-succuss">Program</button>
+      <div ID="indicator">
+      </div>
+      <div class="extra-channel">
+        alternate channel
+        <input type="text" name="channel[name]" placeholder="enter channel">
+        <input type="submit" value="submit">
+      </div>
+      <div class="points">
+        You have killed X minutes of commercials!
+      </div>
+      <a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?text=I%20killed%20commercials%20with%20Commercial%20Killerr">
+Tweet</a>
+    </div>
 
      <!--  Register Modal-->
        <div id="open-sign-up" class="modal fade" tabindex="-1" role="dialog">

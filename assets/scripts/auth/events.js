@@ -51,6 +51,45 @@ const onNavOptions = () => {
    $('#open-options').modal('show');
 };
 
+const onChannelInput = function (event) {
+   console.log("channel input");
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  console.log(data);
+  api.channelInput(data)
+  .done(ui.channelInputSuccess)
+  .fail(ui.failure);
+};
+
+// const onCommercialUpdate = function () {
+//   let channelTargeted = $('#indicator').text();
+//   //get channel name from channelInput
+//   console.log(channelTargeted);
+//   let boolean = true;
+//   //data.ads = true
+//   //data.name = 111
+//   event.preventDefault();
+//   api.commercialUpdate(boolean, channelTargeted)
+//   .done(ui.getChannelSuccess)
+//   .fail(ui.failure);
+// };
+
+// const onProgramUpdate = function () {
+//   event.preventDefault();
+//   api.programUpdate()
+//   .done(ui.success)
+//   .fail(ui.failure);
+// };
+
+const onGetChannel = function (event) {
+  event.preventDefault();
+  //let data = getFormFields(event.target);
+  let channelTargeted = $('#indicator').text();
+  api.getChannel(channelTargeted)
+  .done(ui.getChannelSuccess)
+  .fail(ui.failure);
+};
+
 const addHandlers = () => {
  $('#sign-up').on('submit', onSignUp);
  $('#sign-in').on('submit', onSignIn);
@@ -59,6 +98,10 @@ const addHandlers = () => {
  $('#nav-sign-up').on('click', onNavSignUp);
  $('#nav-sign-in').on('click', onNavSignIn);
  $('#nav-options').on('click', onNavOptions);
+ $('#channel-input').on('submit', onChannelInput);
+ $('.commercial-button').on('click', onGetChannel);
+ $('.program-button').on('click', onGetChannel);
+ $('.extra-channel').on('submit', onGetChannel);
 };
 
 module.exports = {

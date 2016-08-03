@@ -20,9 +20,44 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   font-size: 50px;
 }
 
-.optionsbtn {
-  color: red;
+.commercial-button {
+  padding: 10px 24px;
+  background-color: red;
 }
+
+.program-button {
+  padding: 10px 24px;
+  background-color: green;
+  color: white;
+}
+
+#indicator {
+  border-style: solid;
+  width: 250px;
+  height: 250px;
+}
+
+.points {
+  border-style: solid;
+  border-color: blue;
+  width: 160px;
+  height: 72px;
+}
+//
+// #indicator{
+//   position: absolute;
+// }
+
+// .extra-channel {
+//   position: relative;
+//   left: 0px;
+// }
+//
+// .points {
+//   position: relative;
+//   bottom: 0px;
+//   clear: left;
+// }
 // #nav-options {
 //   color: red;
 // }

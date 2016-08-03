@@ -39,9 +39,45 @@ const changePassword = function (data){
   });
 };
 
+const channelInput = function (data) {
+  return $.ajax({
+    url: app.host + "/channels",
+    method: 'POST',
+    data: data,
+  });
+};
+
+const getChannel = function (channelTargeted) {
+  console.log(channelTargeted);
+  return $.ajax({
+    url: app.host + "/channels/" + channelTargeted,
+    method: 'GET',
+  });
+};
+
+const updateChannel = function (data) {
+  return $.ajax({
+    url: app.host + "/channels/" + data.id,
+    method: 'PATCH',
+    //data: ads: true
+
+  });
+};
+// const getChannel =  function () {
+//   return $.ajax({
+//     url: app.host + "/channels",
+//     method: 'GET',
+//   });
+// };
+
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
+  channelInput,
+  // commercialUpdate,
+  getChannel,
+  updateChannel,
 };
