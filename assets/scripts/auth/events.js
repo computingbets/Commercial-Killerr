@@ -57,8 +57,8 @@ const onChannelInput = function (event) {
   let data = getFormFields(event.target);
   console.log(data);
   api.channelInput(data)
-  .done(ui.channelInputSuccess)
-  .fail(ui.failure);
+  .then(ui.channelInputSuccess)
+  .catch(error => console.error(error));
 };
 
 // const onCommercialUpdate = function () {
@@ -87,8 +87,9 @@ const onGetChannelAds = function (event) {
   //let data = getFormFields(event.target);
   let channelTargeted = $('.commercial-button').text();
   api.getChannelAds(channelTargeted)
-  .done(ui.getChannelAdsSuccess)
-  .fail(ui.failure);
+  .then(api.updateChannelAds)
+  .then(ui.updateChannelAdsSuccess)
+  .catch(error => console.error(error));
 };
 
 const onGetChannelProg = function (event) {
@@ -97,8 +98,9 @@ const onGetChannelProg = function (event) {
   //let data = getFormFields(event.target);
   let channelTargeted = $('.commercial-button').text();
   api.getChannelProg(channelTargeted)
-  .done(ui.getChannelProgSuccess)
-  .fail(ui.failure);
+  .then(api.updateChannelProg)
+  .then(ui.updateChannelProgSuccess)
+  .catch(error => console.error(error));
 };
 
 const addHandlers = () => {
@@ -112,7 +114,6 @@ const addHandlers = () => {
  $('#channel-input').on('submit', onChannelInput);
  $('body').on('click', '.commercial-button', onGetChannelAds);
  $('body').on('click', '.program-button', onGetChannelProg);
- //$('.extra-channel').on('submit', onGetChannel);
 };
 
 module.exports = {

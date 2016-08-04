@@ -28,8 +28,8 @@ const signOutSuccess = () => {
 
 const channelInputSuccess = function (data) {
   console.log(data.channel.name);
-  $('#indicator').append(data.channel.name);
-  $('.commercial-body').prepend(handlebarsTemplate({data}));
+  //$('#indicator').html(data.channel.name);
+  $('.button-body').html(handlebarsTemplate({data}));
   //$('.commercial-button').on('click', onGetChannel);
 
   console.log(data);
@@ -45,23 +45,23 @@ const updateChannelProgSuccess = function () {
   $('#indicator').css("background-color", "green");
 };
 
-const getChannelAdsSuccess = function (data) {
-  //console.log(data);
-  event.preventDefault();
+// const getChannelAdsSuccess = function (data) {
+//   //console.log(data);
+//   event.preventDefault();
+//
+//   // api.updateChannelAds(data)
+//   // .done(updateChannelAdsSuccess())
+//   // .fail(failure());
+// };
 
-  api.updateChannelAds(data)
-  .done(updateChannelAdsSuccess())
-  .fail(failure());
-};
+// const getChannelProgSuccess = function (data) {
+//   //console.log(data);
+//   event.preventDefault();
 
-const getChannelProgSuccess = function (data) {
-  //console.log(data);
-  event.preventDefault();
-
-  api.updateChannelProg(data)
-  .done(updateChannelProgSuccess())
-  .fail(failure());
-};
+  // api.updateChannelProg(data)
+  // .done(updateChannelProgSuccess())
+  // .fail(failure());
+//};
 
 module.exports = {
  success,
@@ -69,6 +69,8 @@ module.exports = {
  signInSuccess,
  signOutSuccess,
  channelInputSuccess,
- getChannelAdsSuccess,
- getChannelProgSuccess,
+ // getChannelAdsSuccess,
+ // getChannelProgSuccess,
+ updateChannelAdsSuccess,
+ updateChannelProgSuccess,
 };
