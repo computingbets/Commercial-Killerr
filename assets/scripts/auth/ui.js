@@ -30,38 +30,31 @@ const channelInputSuccess = function (data) {
   console.log(data.channel.name);
   //$('#indicator').html(data.channel.name);
   $('.button-body').html(handlebarsTemplate({data}));
-  //$('.commercial-button').on('click', onGetChannel);
-
-  console.log(data);
-
-  //pass data.channel or data.id to onUpdateChannel
+  $('#indicator').html('Red for commercials. Green for program.')
+  //console.log(data);
 };
 
+let points = 0;
 const updateChannelAdsSuccess = function () {
+points += 4;
   $('#indicator').css("background-color", "red");
+  $('.points').css('border-color', 'blue').html('you have killed '+ points + ' minutes of commercials');
+  if (points >= 16) {
+    console.log('Steph!');
+    $('.badges').css("background-image", 'url("https://sites.google.com/site/mapsapiicon/_/rsrc/1468759346685/home/steph%20curry%20head.png")');
+    $('.badge-message').html('You earned a badge! You are the Steph Curry of commercial killing!');
+  }
 };
 
 const updateChannelProgSuccess = function () {
   $('#indicator').css("background-color", "green");
 };
 
-// const getChannelAdsSuccess = function (data) {
-//   //console.log(data);
-//   event.preventDefault();
-//
-//   // api.updateChannelAds(data)
-//   // .done(updateChannelAdsSuccess())
-//   // .fail(failure());
-// };
-
-// const getChannelProgSuccess = function (data) {
-//   //console.log(data);
-//   event.preventDefault();
-
-  // api.updateChannelProg(data)
-  // .done(updateChannelProgSuccess())
-  // .fail(failure());
-//};
+const deleteChannelSuccess = function () {
+  $('.button-body').html("");
+  $('#indicator').html('selekt another channel').css("background-color", "white");
+  $('#indicator').css('font-color', 'black');
+};
 
 module.exports = {
  success,
@@ -69,8 +62,7 @@ module.exports = {
  signInSuccess,
  signOutSuccess,
  channelInputSuccess,
- // getChannelAdsSuccess,
- // getChannelProgSuccess,
  updateChannelAdsSuccess,
  updateChannelProgSuccess,
+ deleteChannelSuccess,
 };

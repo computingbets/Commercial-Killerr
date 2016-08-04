@@ -1,10 +1,17 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+body {
+  background-color: #320459;
+}
+
 .modal-body {
    background-image: url('https://media.giphy.com/media/sCOqmzlHkzYmQ/giphy.gif');
 }
-
+.modal-content {
+  font-family: 'Creepster', serif;
+  color: red;
+}
 .container {
   background-image: url('http://cache2.asset-cache.net/xd/157367417.jpg?v=1&c=IWSAsset&k=2&d=62CA815BFB1CE4803563B1399100503173E7DAAD5CA53869742A9D70247ED2456D9B0702D02B4547');
   color: red;
@@ -32,16 +39,55 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 #indicator {
+  font-family: 'Creepster', serif;
+  color: white;
   border-style: solid;
+  border-color: black;
   width: 250px;
   height: 250px;
 }
 
 .points {
+  font-family: 'Creepster', serif;
+  color: red;
   border-style: solid;
-  border-color: blue;
+  border-color: #320459;
   width: 160px;
   height: 72px;
+}
+
+.badges {
+  margin-bottom: 1800px;
+  width: 160px;
+  height: 203px;
+  position: absolute;;
+  top: 230px;
+  left: 420px;
+}
+
+.badge-message {
+  font-family: 'Creepster', serif;
+  font-size: 16px;
+  width: 221px;
+  color: red;
+  position: absolute;
+  top: 433px;
+  left: 411px;
+}
+
+.delete {
+  font-family: 'Creepster', serif;
+  color: white;
+}
+
+#channel-input {
+  font-family: 'Creepster', serif;
+  color: black;
+}
+
+.container {
+  font-family: 'Creepster', serif;
+  color: white;
 }
 //
 // #indicator{

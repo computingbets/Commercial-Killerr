@@ -87,6 +87,7 @@ const getChannelProg = function (channelTargeted) {
   });
 };
 
+
 const updateChannelAds = function (data) {
   return new Promise((resolve, reject) => {
   //console.log(data.channel.id);
@@ -132,12 +133,21 @@ const updateChannelProg = function (data) {
     });
   });
 };
-// const getChannel =  function () {
-//   return $.ajax({
-//     url: app.host + "/channels",
-//     method: 'GET',
-//   });
-// };
+
+const deleteChannel = function (channelDelete) {
+  return new Promise((resolve, reject) => {
+    return $.ajax({
+      url: app.host + "/channels/" + channelDelete,
+      method: 'DELETE',
+        success: (response) => {
+          resolve(response);
+        },
+        error: (error) => {
+          reject(error);
+      },
+    });
+  });
+ };
 
 
 module.exports = {
@@ -146,9 +156,9 @@ module.exports = {
   signOut,
   changePassword,
   channelInput,
-  // commercialUpdate,
   getChannelAds,
   getChannelProg,
   updateChannelAds,
   updateChannelProg,
+  deleteChannel,
 };

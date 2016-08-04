@@ -61,26 +61,6 @@ const onChannelInput = function (event) {
   .catch(error => console.error(error));
 };
 
-// const onCommercialUpdate = function () {
-//   let channelTargeted = $('#indicator').text();
-//   //get channel name from channelInput
-//   console.log(channelTargeted);
-//   let boolean = true;
-//   //data.ads = true
-//   //data.name = 111
-//   event.preventDefault();
-//   api.commercialUpdate(boolean, channelTargeted)
-//   .done(ui.getChannelSuccess)
-//   .fail(ui.failure);
-// };
-
-// const onProgramUpdate = function () {
-//   event.preventDefault();
-//   api.programUpdate()
-//   .done(ui.success)
-//   .fail(ui.failure);
-// };
-
 const onGetChannelAds = function (event) {
   console.log('get dat channel');
   event.preventDefault();
@@ -95,11 +75,18 @@ const onGetChannelAds = function (event) {
 const onGetChannelProg = function (event) {
   //console.log('get dat channel');
   event.preventDefault();
-  //let data = getFormFields(event.target);
   let channelTargeted = $('.commercial-button').text();
   api.getChannelProg(channelTargeted)
   .then(api.updateChannelProg)
   .then(ui.updateChannelProgSuccess)
+  .catch(error => console.error(error));
+};
+
+const onDeleteChannel = function () {
+  event.preventDefault();
+  let channelDelete = $('.commercial-button').text();
+  api.deleteChannel(channelDelete)
+  .then(ui.deleteChannelSuccess)
   .catch(error => console.error(error));
 };
 
@@ -114,6 +101,7 @@ const addHandlers = () => {
  $('#channel-input').on('submit', onChannelInput);
  $('body').on('click', '.commercial-button', onGetChannelAds);
  $('body').on('click', '.program-button', onGetChannelProg);
+ $('.delete').on('click', onDeleteChannel);
 };
 
 module.exports = {
