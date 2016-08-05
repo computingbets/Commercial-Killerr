@@ -1,13 +1,14 @@
 # Commercial Killerr
 ## GA capstone project
 
-!(/assets/scripts/img/CK.png)
+!(http://imgur.com/QWaiJ1M)
 
 Goonies never say die! What should die, however, are commercials. This is where
 the Commercial Killerr may help. It is a user powered television commercial
 detection application. Enter the channel and click the red pop-up button when
 there is a commercial and the indicator will let the user know when to avoid
 that channel.
+
 Commercial Killerr uses Javascript and Ruby on Rails in the front and back ends,
 respectively. The front end utilized Google Fonts as well as both giphs and
 images found on Google. The front end also takes advantage of JS native
@@ -15,6 +16,7 @@ promises to essentially make asynchronous api calls execute in order. What is
 seen on the page is both an HTML file and a relatively hefty user interface that
 displays things like a counter and user achievement badges when particular JS
 functions are executed.
+
 Ruby on Rails composes the back end. This developer took advantage of and
 implemented Rails-provided scaffolding. It is a dream for a front end developer
 as it creates the bulk of back end necessities. One deviance from scaffolding in
@@ -32,8 +34,10 @@ There are no dependencies needed for this app.
 ### User Stories
 As a user, I want to go to an open-ended page and put in a channel to see if it
 has ads.
+
 As a user I want to be able to indicate through buttons that a channel
 being watched has ads or programming.
+
 As a user, I want cool stuff like seeing how many ads I've killed and badges for
 my commercial slaying.
 
