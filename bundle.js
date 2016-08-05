@@ -68,12 +68,6 @@ webpackJsonp([0],[
 	  api.signOut().done(ui.signOutSuccess).fail(ui.failure);
 	};
 
-	var onChangePassword = function onChangePassword(event) {
-	  event.preventDefault();
-	  var data = getFormFields(event.target);
-	  api.changePassword(data).done(ui.success).fail(ui.failure);
-	};
-
 	var onNavSignUp = function onNavSignUp() {
 	  console.log("We're inside onNavSignUp");
 	  $('#open-sign-up').modal('show');
@@ -88,7 +82,7 @@ webpackJsonp([0],[
 	};
 
 	var onChannelInput = function onChannelInput(event) {
-	  console.log("channel input");
+	  //console.log("channel input");
 	  event.preventDefault();
 	  var data = getFormFields(event.target);
 	  console.log(data);
@@ -98,7 +92,7 @@ webpackJsonp([0],[
 	};
 
 	var onGetChannelAds = function onGetChannelAds(event) {
-	  console.log('get dat channel');
+	  //console.log('get dat channel');
 	  event.preventDefault();
 	  //let data = getFormFields(event.target);
 	  var channelTargeted = $('.commercial-button').text();
@@ -421,7 +415,7 @@ webpackJsonp([0],[
 	};
 
 	var channelInputSuccess = function channelInputSuccess(data) {
-	  console.log(data.channel.name);
+	  //console.log(data.channel.name);
 	  //$('#indicator').html(data.channel.name);
 	  $('.button-body').html(handlebarsTemplate({ data: data }));
 	  $('#indicator').html('Red for commercials. Green for program.');
@@ -434,7 +428,7 @@ webpackJsonp([0],[
 	  $('#indicator').css("background-color", "red");
 	  $('.points').css('border-color', 'blue').html('you have killed ' + points + ' minutes of commercials');
 	  if (points >= 16) {
-	    console.log('Steph!');
+	    //console.log('Steph!');
 	    $('.badges').css("background-image", 'url("https://sites.google.com/site/mapsapiicon/_/rsrc/1468759346685/home/steph%20curry%20head.png")');
 	    $('.badge-message').html('You earned a badge! You are the Steph Curry of commercial killing!');
 	  }
