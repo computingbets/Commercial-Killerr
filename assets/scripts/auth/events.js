@@ -30,14 +30,6 @@ const onSignOut = (event) => {
  .fail(ui.failure);
 };
 
-const onChangePassword = (event) => {
- event.preventDefault();
- let data = getFormFields(event.target);
- api.changePassword(data)
- .done(ui.success)
- .fail(ui.failure);
-};
-
 const onNavSignUp = () => {
   console.log("We're inside onNavSignUp");
    $('#open-sign-up').modal('show');
@@ -52,7 +44,7 @@ const onNavOptions = () => {
 };
 
 const onChannelInput = function (event) {
-   console.log("channel input");
+   //console.log("channel input");
   event.preventDefault();
   let data = getFormFields(event.target);
   console.log(data);
@@ -62,7 +54,7 @@ const onChannelInput = function (event) {
 };
 
 const onGetChannelAds = function (event) {
-  console.log('get dat channel');
+  //console.log('get dat channel');
   event.preventDefault();
   //let data = getFormFields(event.target);
   let channelTargeted = $('.commercial-button').text();
