@@ -143,7 +143,6 @@ module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword,
   channelInput,
   getChannelAds,
   getChannelProg,
