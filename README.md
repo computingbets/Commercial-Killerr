@@ -1,7 +1,7 @@
 # Commercial Killerr
 ## GA capstone project
 
-![CK](http://imgur.com/QWaiJ1M)
+![CK](http://i.imgur.com/QWaiJ1M.png)
 
 Goonies never say die! What should die, however, are commercials. This is where
 the Commercial Killerr may help. It is a user powered television commercial
