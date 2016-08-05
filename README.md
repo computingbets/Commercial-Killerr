@@ -55,3 +55,5 @@ and indicator features of Commercial Killerr. Ideally, the back end will have an
 array with Posgres computed columns so that the database can store an array and
 when 51% say there is a commercial, the indicator will switch to a commercial,
 likewise for programming. Cheers!
+
+back-end repo: https://github.com/logicmyth/capstone-back-end
