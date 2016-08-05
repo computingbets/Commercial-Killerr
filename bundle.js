@@ -349,7 +349,6 @@ webpackJsonp([0],[
 	  signUp: signUp,
 	  signIn: signIn,
 	  signOut: signOut,
-	  changePassword: changePassword,
 	  channelInput: channelInput,
 	  getChannelAds: getChannelAds,
 	  getChannelProg: getChannelProg,
