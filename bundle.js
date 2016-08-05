@@ -236,17 +236,6 @@ webpackJsonp([0],[
 	  });
 	};
 
-	var changePassword = function changePassword(data) {
-	  return $.ajax({
-	    url: app.host + "/change-password/" + app.user.id,
-	    method: 'PATCH',
-	    headers: {
-	      Authorization: 'Token token=' + app.user.token
-	    },
-	    data: data
-	  });
-	};
-
 	var channelInput = function channelInput(data) {
 	  return new Promise(function (resolve, reject) {
 	    return $.ajax({
