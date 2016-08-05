@@ -27,7 +27,7 @@ const signOutSuccess = () => {
 };
 
 const channelInputSuccess = function (data) {
-  console.log(data.channel.name);
+  //console.log(data.channel.name);
   //$('#indicator').html(data.channel.name);
   $('.button-body').html(handlebarsTemplate({data}));
   $('#indicator').html('Red for commercials. Green for program.')
@@ -40,7 +40,7 @@ points += 4;
   $('#indicator').css("background-color", "red");
   $('.points').css('border-color', 'blue').html('you have killed '+ points + ' minutes of commercials');
   if (points >= 16) {
-    console.log('Steph!');
+    //console.log('Steph!');
     $('.badges').css("background-image", 'url("https://sites.google.com/site/mapsapiicon/_/rsrc/1468759346685/home/steph%20curry%20head.png")');
     $('.badge-message').html('You earned a badge! You are the Steph Curry of commercial killing!');
   }
