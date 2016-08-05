@@ -28,17 +28,6 @@ const signOut = function () {
   });
 };
 
-const changePassword = function (data){
-   return $.ajax({
-    url: app.host + "/change-password/" + app.user.id,
-    method: 'PATCH',
-    headers: {
-    Authorization: 'Token token=' + app.user.token,
-    },
-    data: data,
-  });
-};
-
 const channelInput = function (data) {
   return new Promise((resolve, reject) => {
   return $.ajax({

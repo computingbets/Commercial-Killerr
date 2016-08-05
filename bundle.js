@@ -122,7 +122,6 @@ webpackJsonp([0],[
 	  $('#sign-up').on('submit', onSignUp);
 	  $('#sign-in').on('submit', onSignIn);
 	  $('#sign-out').on('submit', onSignOut);
-	  $('#change-password').on('submit', onChangePassword);
 	  $('#nav-sign-up').on('click', onNavSignUp);
 	  $('#nav-sign-in').on('click', onNavSignIn);
 	  $('#nav-options').on('click', onNavOptions);
