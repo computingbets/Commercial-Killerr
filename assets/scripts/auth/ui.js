@@ -3,6 +3,7 @@
 const app = require('../app.js');
 const api = require('./api');
 const handlebarsTemplate = require('../templates/display-update-buttons.handlebars');
+const slaughterhouse = require('../templates/slaughterhouse.handlebars')
 
 const success = (data) => {
  if (data) {
@@ -30,8 +31,13 @@ const channelInputSuccess = function (data) {
   //console.log(data.channel.name);
   //$('#indicator').html(data.channel.name);
   $('.button-body').html(handlebarsTemplate({data}));
-  $('#indicator').html('Red for commercials. Green for program.')
+  $('#indicator').html('Red for commercials. Green for program.');
   //console.log(data);
+};
+
+const channelInputFailure = function () {
+  console.log('InputFailure');
+  $('#indicator').html('Channel already created. Click slaughterhouse for index');
 };
 
 let points = 0;
@@ -56,13 +62,21 @@ const deleteChannelSuccess = function () {
   $('#indicator').css('font-color', 'black');
 };
 
+const indexSuccess = function (data) {
+  //console.log(data);
+  $('.slaughterhouseMessage').html('Default status is green/program unless ads/red specified');
+  $('.slaughterhouseFill').html(slaughterhouse(data));
+};
+
 module.exports = {
  success,
  failure,
  signInSuccess,
  signOutSuccess,
  channelInputSuccess,
+ channelInputFailure,
  updateChannelAdsSuccess,
  updateChannelProgSuccess,
  deleteChannelSuccess,
+ indexSuccess,
 };

@@ -1,0 +1,12 @@
+<ul>
+{{#each channels as |channel| }}
+  <li>{{channel.name}}
+    {{#if channel.ads}}
+    <button class="btn btn-danger"></button>
+    {{/if}}
+    {{#unless channel.ads}}
+    <button class="btn btn-success"></button>
+    {{/unless}}
+  </li>
+{{/each}}
+</ul>

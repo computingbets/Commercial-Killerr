@@ -31,7 +31,7 @@ const onSignOut = (event) => {
 };
 
 const onNavSignUp = () => {
-  console.log("We're inside onNavSignUp");
+  //console.log("We're inside onNavSignUp");
    $('#open-sign-up').modal('show');
 };
 
@@ -50,7 +50,7 @@ const onChannelInput = function (event) {
   console.log(data);
   api.channelInput(data)
   .then(ui.channelInputSuccess)
-  .catch(error => console.error(error));
+  .catch(ui.channelInputFailure);
 };
 
 const onGetChannelAds = function (event) {
@@ -82,6 +82,14 @@ const onDeleteChannel = function () {
   .catch(error => console.error(error));
 };
 
+const onIndexChannels = function () {
+  console.log('eventsindex');
+  event.preventDefault();
+  api.indexChannels()
+  .done(ui.indexSuccess)
+  .fail(ui.failure);
+};
+
 const addHandlers = () => {
  $('#sign-up').on('submit', onSignUp);
  $('#sign-in').on('submit', onSignIn);
@@ -93,6 +101,7 @@ const addHandlers = () => {
  $('body').on('click', '.commercial-button', onGetChannelAds);
  $('body').on('click', '.program-button', onGetChannelProg);
  $('.delete').on('click', onDeleteChannel);
+ $('.index').on('click', onIndexChannels);
 };
 
 module.exports = {

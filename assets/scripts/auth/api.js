@@ -138,6 +138,13 @@ const deleteChannel = function (channelDelete) {
   });
  };
 
+ const indexChannels = function () {
+   return $.ajax({
+     url: app.host + "/channels",
+     method: 'GET',
+   });
+ };
+
 
 module.exports = {
   signUp,
@@ -149,4 +156,5 @@ module.exports = {
   updateChannelAds,
   updateChannelProg,
   deleteChannel,
+  indexChannels,
 };
