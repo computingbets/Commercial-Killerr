@@ -399,6 +399,8 @@ webpackJsonp([0],[
 	  } else {
 	    console.log('Success');
 	  }
+	  $('#open-sign-up').modal('hide');
+	  $('#sign-in-up-success').modal('show');
 	};
 
 	var failure = function failure(error) {
@@ -409,6 +411,8 @@ webpackJsonp([0],[
 	  app.user = data.user;
 	  app.id = data.user._id;
 	  console.log(app.user);
+	  $('#open-sign-in').modal('hide');
+	  $('#sign-in-up-success').modal('show');
 	};
 
 	var signOutSuccess = function signOutSuccess() {
