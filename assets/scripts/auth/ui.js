@@ -3,7 +3,7 @@
 const app = require('../app.js');
 const api = require('./api');
 const handlebarsTemplate = require('../templates/display-update-buttons.handlebars');
-const slaughterhouse = require('../templates/slaughterhouse.handlebars')
+const slaughterhouse = require('../templates/slaughterhouse.handlebars');
 
 const success = (data) => {
  if (data) {
@@ -11,7 +11,8 @@ const success = (data) => {
  } else {
    console.log('Success');
  }
-};
+ };
+
 
 const failure = (error) => {
  console.error(error);
@@ -19,6 +20,7 @@ const failure = (error) => {
 
 const signInSuccess = (data) => {
  app.user = data.user;
+ app.id = data.user._id
  console.log(app.user);
 };
 

@@ -11,7 +11,11 @@ const onSignUp = (event) => {
  let data = getFormFields(event.target);
  api.signUp(data)
  .done(ui.success)
- .fail(ui.failure);
+ .fail(ui.failure)
+ .then(api.signIn(data)
+ .done(ui.success)
+ .fail(ui.failure))
+
 };
 
 const onSignIn = (event) => {
