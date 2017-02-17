@@ -11,6 +11,8 @@ const success = (data) => {
  } else {
    console.log('Success');
  }
+ $('#open-sign-up').modal('hide');
+ $('#sign-in-up-success').modal('show');
  };
 
 
@@ -22,6 +24,8 @@ const signInSuccess = (data) => {
  app.user = data.user;
  app.id = data.user._id
  console.log(app.user);
+ $('#open-sign-in').modal('hide');
+ $('#sign-in-up-success').modal('show');
 };
 
 const signOutSuccess = () => {
