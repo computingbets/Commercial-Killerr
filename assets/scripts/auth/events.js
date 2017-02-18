@@ -10,10 +10,10 @@ const onSignUp = new Promise (resolve, reject, event) => {
  event.preventDefault();
  let data = getFormFields(event.target);
  api.signUp(data)
- // .done(ui.success)
- // .fail(ui.failure)
- .then(api.signIn)
- // .done(ui.success)
+ .done(ui.success)
+ .fail(ui.failure)
+ .then(api.signIn(data))
+ .done(ui.success)
  .fail(ui.failure);
 });
 
