@@ -7,15 +7,21 @@ const ui = require('./ui');
 
 
 const onSignUp = (event) => {
- event.preventDefault();
- let data = getFormFields(event.target);
- api.signUp(data)
- .done(ui.success)
- .fail(ui.failure)
- .then(api.signIn(data))
- .done(ui.success)
- .fail(ui.failure);
+  event.preventDefault();
+  let data = getFormFields(event.target);
+return new Promise ((resolve, reject) => {
+  api.signUp(data, (err, res) => {
+    if (err) {
+      reject (err);
+    }else {
+      resolve (res);
+    }
+});
+})
+.then(api.signIn(data))
+.catch(console.error);
 };
+
 
 const onSignIn = (event) => {
  event.preventDefault();
