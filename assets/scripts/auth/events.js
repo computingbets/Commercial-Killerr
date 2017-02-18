@@ -6,7 +6,7 @@ const api = require('./api');
 const ui = require('./ui');
 
 
-const onSignUp = new Promise (resolve, reject, event) => {
+const onSignUp = (event) => {
  event.preventDefault();
  let data = getFormFields(event.target);
  api.signUp(data)
@@ -15,7 +15,7 @@ const onSignUp = new Promise (resolve, reject, event) => {
  .then(api.signIn(data))
  .done(ui.success)
  .fail(ui.failure);
-});
+};
 
 const onSignIn = (event) => {
  event.preventDefault();
