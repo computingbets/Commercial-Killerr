@@ -53,7 +53,15 @@ webpackJsonp([0],[
 	var onSignUp = function onSignUp(event) {
 	  event.preventDefault();
 	  var data = getFormFields(event.target);
-	  api.signUp(data).done(ui.success).fail(ui.failure).then(api.signIn(data)).done(ui.success).fail(ui.failure);
+	  return new Promise(function (resolve, reject) {
+	    api.signUp(data, function (err, res) {
+	      if (err) {
+	        reject(err);
+	      } else {
+	        resolve(res);
+	      }
+	    });
+	  }).then(api.signIn(data)).catch(console.error);
 	};
 
 	var onSignIn = function onSignIn(event) {
