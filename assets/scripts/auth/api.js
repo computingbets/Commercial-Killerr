@@ -1,11 +1,19 @@
 'use strict';
 const app = require('../app.js');
 
-const signUp = (data) => {
+const signUp = function (data) {
+  return new Promise ((resolve, reject) => {
   return $.ajax({
     url: app.host + "/sign-up",
     method: 'POST',
     data: data,
+      success: (response) => {
+      resolve(response);
+      },
+      error: (error) => {
+        reject(error);
+      },
+    });
   });
 };
 
