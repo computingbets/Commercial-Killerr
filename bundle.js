@@ -53,15 +53,7 @@ webpackJsonp([0],[
 	var onSignUp = function onSignUp(event) {
 	  event.preventDefault();
 	  var data = getFormFields(event.target);
-	  return new Promise(function (resolve, reject) {
-	    api.signUp(data, function (err, res) {
-	      if (err) {
-	        reject(err);
-	      } else {
-	        resolve(res);
-	      }
-	    });
-	  }).then(api.signIn(data)).catch(console.error);
+	  api.signUp(data).done(ui.success).fail(ui.failure).then(api.signIn(data)).done(ui.success).fail(ui.failure);
 	};
 
 	var onSignIn = function onSignIn(event) {
@@ -223,10 +215,18 @@ webpackJsonp([0],[
 	var app = __webpack_require__(6);
 
 	var signUp = function signUp(data) {
-	  return $.ajax({
-	    url: app.host + "/sign-up",
-	    method: 'POST',
-	    data: data
+	  return new Promise(function (resolve, reject) {
+	    return $.ajax({
+	      url: app.host + "/sign-up",
+	      method: 'POST',
+	      data: data,
+	      success: function success(response) {
+	        resolve(response);
+	      },
+	      error: function error(_error) {
+	        reject(_error);
+	      }
+	    });
 	  });
 	};
 
@@ -258,8 +258,8 @@ webpackJsonp([0],[
 	      success: function success(response) {
 	        resolve(response);
 	      },
-	      error: function error(_error) {
-	        reject(_error);
+	      error: function error(_error2) {
+	        reject(_error2);
 	      }
 	    });
 	  });
@@ -274,8 +274,8 @@ webpackJsonp([0],[
 	      success: function success(response) {
 	        resolve(response);
 	      },
-	      error: function error(_error2) {
-	        reject(_error2);
+	      error: function error(_error3) {
+	        reject(_error3);
 	      }
 	    });
 	  });
@@ -290,8 +290,8 @@ webpackJsonp([0],[
 	      success: function success(response) {
 	        resolve(response);
 	      },
-	      error: function error(_error3) {
-	        reject(_error3);
+	      error: function error(_error4) {
+	        reject(_error4);
 	      }
 	    });
 	  });
@@ -313,8 +313,8 @@ webpackJsonp([0],[
 	      success: function success(response) {
 	        resolve(response);
 	      },
-	      error: function error(_error4) {
-	        reject(_error4);
+	      error: function error(_error5) {
+	        reject(_error5);
 	      }
 	    });
 	  });
@@ -336,8 +336,8 @@ webpackJsonp([0],[
 	      success: function success(response) {
 	        resolve(response);
 	      },
-	      error: function error(_error5) {
-	        reject(_error5);
+	      error: function error(_error6) {
+	        reject(_error6);
 	      }
 	    });
 	  });
@@ -351,8 +351,8 @@ webpackJsonp([0],[
 	      success: function success(response) {
 	        resolve(response);
 	      },
-	      error: function error(_error6) {
-	        reject(_error6);
+	      error: function error(_error7) {
+	        reject(_error7);
 	      }
 	    });
 	  });
