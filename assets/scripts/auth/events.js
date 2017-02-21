@@ -10,12 +10,12 @@ const onSignUp = (event) => {
  event.preventDefault();
  let data = getFormFields(event.target);
  api.signUp(data)
- .done(ui.success)
- .fail(ui.failure)
- .then(api.signIn(data))
- .done(ui.success)
- .fail(ui.failure);
-};
+  .then(api.signIn(data))
+    /// this is failing with No 'Access-Control-Allow-Origin'
+    /// header is present on the requested resource.
+    .done(ui.success)
+    .fail(ui.failure);
+ };
 
 const onSignIn = (event) => {
  event.preventDefault();

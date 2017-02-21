@@ -7,7 +7,7 @@ const slaughterhouse = require('../templates/slaughterhouse.handlebars');
 
 const success = (data) => {
  if (data) {
-   console.log(data);
+   console.log("success", data);
  } else {
    console.log('Success');
  }
@@ -18,6 +18,7 @@ const success = (data) => {
 
 const failure = (error) => {
  console.error(error);
+ console.log("ui failure  ", error);
 };
 
 const signInSuccess = (data) => {
