@@ -18,7 +18,6 @@ const success = (data) => {
 
 const failure = (error) => {
  console.error(error);
- console.log("ui failure  ", error);
 };
 
 const signInSuccess = (data) => {
