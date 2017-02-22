@@ -1,5 +1,6 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+// @import 'compass/css3'
 
 body {
   background-color: #320459;
@@ -94,10 +95,16 @@ body {
   font-family: 'Creepster', serif;
   color: white;
 }
-//
-// #indicator{
-//   position: absolute;
-// }
+
+.glitch {
+  font-size: 20px;
+  @include textGlitch("glitch", 17, white, black, red, blue, 450, 115);
+}
+
+#indicator{
+  position: absolute;
+}
+
 
 // .extra-channel {
 //   position: relative;

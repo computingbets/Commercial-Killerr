@@ -51,7 +51,7 @@ let points = 0;
 const updateChannelAdsSuccess = function () {
 points += 4;
   $('#indicator').css("background-color", "red");
-  $('.points').css('border-color', 'blue').html('you have killed '+ points + ' minutes of commercials');
+  $('.glitch').css('border-color', 'blue').html('you have killed '+ points + ' minutes of commercials');
   if (points >= 16) {
     //console.log('Steph!');
     $('.badges').css("background-image", 'url("https://sites.google.com/site/mapsapiicon/_/rsrc/1468759346685/home/steph%20curry%20head.png")');
