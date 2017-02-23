@@ -18,12 +18,11 @@ const success = (data) => {
 
 const failure = (error) => {
  console.error(error);
- console.log("ui failure  ", error);
 };
 
 const signInSuccess = (data) => {
  app.user = data.user;
- app.id = data.user._id
+ app.id = data.user._id;
  console.log(app.user);
  $('#open-sign-in').modal('hide');
  $('#sign-in-up-success').modal('show');
@@ -52,10 +51,18 @@ const updateChannelAdsSuccess = function () {
 points += 4;
   $('#indicator').css("background-color", "red");
   $('.points').css('border-color', 'blue').html('you have killed '+ points + ' minutes of commercials');
-  if (points >= 16) {
+  if (points >= 40) {
     //console.log('Steph!');
+    $('.delusional').show();
+    $('.badges').hide();
+    //.css("background-image", 'url("https://soundcloud.com/deathgrimes/death-grimes-ehblivion")');
+    $('.badge-message').html('Ooh, you\'re sounding delusional');
+  } else if (points >= 28){
+    $('.badges').css("background-image", 'url("https://s-media-cache-ak0.pinimg.com/originals/e3/11/d7/e311d71d0b123e7b546fa1d5502886c0.gif")');
+    $('.badge-message').html('You earned a Killerr badge - Eye of the Killuminati!');
+  } else if (points >= 16){
     $('.badges').css("background-image", 'url("https://sites.google.com/site/mapsapiicon/_/rsrc/1468759346685/home/steph%20curry%20head.png")');
-    $('.badge-message').html('You earned a badge! You are the Steph Curry of commercial killing!');
+    $('.badge-message').html('You earned a Killerr badge! You are the Steph Curry of commercial killing!');
   }
 };
 
