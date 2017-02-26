@@ -7,11 +7,27 @@
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css?family=Creepster">
-      <style>
+      <style type="text/css">
           body {
             font-family: 'Creepster', serif;
           font-size: 48px;
         }
+        .behead {
+    -webkit-animation-duration: 1350ms;
+    -webkit-animation-name: glow;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-iteration-count: infinite;
+    animation-duration: 1350ms;
+    animation-name: glow;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+
+}
+
+@-webkit-keyframes glow {
+    from { text-shadow: 0 0 0px red; }
+    to { text-shadow: 0 0 20px red; }
+}
       </style>
     </head>
     <body class="container-fluid">
@@ -46,32 +62,27 @@
       <!-- <button class="commercial-button btn-danger">Commercial</button>
       <button class="program-button btn-succuss">Program</button> -->
       <div ID="indicator">
-
       </div>
       <div class="points">
-
       </div>
       <div class="badges">
-
       </div>
-
       <div class="badge-message">
-
       </div>
-
-
 
       <a class="twitter-share-button"
   href="https://twitter.com/intent/tweet?text=I%20killed%20commercials%20with%20Commercial%20Killerr" class=\"twitter\  onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"">
 Tweet</a>
     <button class="delete btn-danger"> delete channel </button>
     </div>
+  <div class="slaught">
     <div class="slaughterhouse">
     <button class="index btn-danger">slaughterhouse</button>
     <div class="slaughterhouseMessage"> </div>
     <div class="slaughterhouseFill">
     </div>
     </div>
+  </div>
 
      <!--  Register Modal-->
        <div id="open-sign-up" class="modal fade" tabindex="-1" role="dialog">

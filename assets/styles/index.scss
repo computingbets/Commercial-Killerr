@@ -15,6 +15,7 @@ body {
 .container {
   background-image: url('http://cache2.asset-cache.net/xd/157367417.jpg?v=1&c=IWSAsset&k=2&d=62CA815BFB1CE4803563B1399100503173E7DAAD5CA53869742A9D70247ED2456D9B0702D02B4547');
   color: red;
+  width: 100%;
 }
 
 #nav-div {
@@ -88,6 +89,7 @@ body {
 .delete {
   font-family: 'Creepster', serif;
   color: white;
+  width: 102px;
 }
 
 #channel-input {
@@ -103,6 +105,10 @@ body {
 .slaughterhouse {
   font-family: 'Creepster', serif;
   color: white;
+}
+
+.slaught {
+  margin-left: 40px;
 }
 //
 // #indicator{
