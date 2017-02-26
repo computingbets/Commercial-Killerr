@@ -70,7 +70,7 @@ const onGetChannelAds = function (event) {
 const onGetChannelProg = function (event) {
   //console.log('get dat channel');
   event.preventDefault();
-  let channelTargeted = $('.commercial-button').text();
+  let channelTargeted = $('.program-button').text();
   api.getChannelProg(channelTargeted)
   .then(api.updateChannelProg)
   .then(ui.updateChannelProgSuccess)

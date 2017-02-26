@@ -31,12 +31,13 @@ body {
 .commercial-button {
   padding: 10px 24px;
   background-color: red;
+  color: red !important;
 }
 
 .program-button {
   padding: 10px 24px;
   background-color: green;
-  color: white;
+  color: green;
 }
 
 #indicator {

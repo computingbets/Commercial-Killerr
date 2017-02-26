@@ -72,7 +72,7 @@ const updateChannelProgSuccess = function () {
 
 const deleteChannelSuccess = function () {
   $('.button-body').html("");
-  $('#indicator').html('selekt another channel').css("background-color", "white");
+  $('#indicator').html('select another channel').css("background-color", "white");
   $('#indicator').css('font-color', 'black');
 };
 
