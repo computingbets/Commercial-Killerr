@@ -77,8 +77,9 @@ const deleteChannelSuccess = function () {
 };
 
 const indexSuccess = function (data) {
+  $('.slaughterhouseTitle').show();
   //console.log(data);
-  $('.slaughterhouseMessage').html('Default status is green/program unless ads/red specified');
+  //$('.slaughterhouseMessage').html('Default status is green/program unless ads/red specified');
   $('.slaughterhouseFill').html(slaughterhouse(data));
 };
 
