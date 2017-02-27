@@ -64,6 +64,7 @@ const onGetChannelAds = function (event) {
   api.getChannelAds(channelTargeted)
   .then(api.updateChannelAds)
   .then(ui.updateChannelAdsSuccess)
+  .then(onIndexChannels)
   .catch(error => console.error(error));
 };
 
@@ -74,6 +75,7 @@ const onGetChannelProg = function (event) {
   api.getChannelProg(channelTargeted)
   .then(api.updateChannelProg)
   .then(ui.updateChannelProgSuccess)
+  .then(onIndexChannels)
   .catch(error => console.error(error));
 };
 
