@@ -22,7 +22,10 @@ const onSignIn = (event) => {
  //api.getUserIDPlaylist();
  let data = getFormFields(event.target);
  api.signIn(data)
- .done(ui.signInSuccess)
+ .then(ui.signInSuccess)
+ .then(ui.signInDisplayVotes)
+ .then(api.postVote(data))
+ .then(ui.postVoteSuccess)
  .fail(ui.failure);
 };
 
@@ -95,6 +98,22 @@ const onIndexChannels = function () {
   .fail(ui.failure);
 };
 
+const onUpdateVoteProg = function (event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.updateVoteProg(data)
+  .done(console.log('successVoteVote'))
+  .fail(ui.failure);
+};
+
+const onUpdateVoteAds = function (event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.updateVoteProg(data)
+  .done(console.log('successVoteVoteAds'))
+  .fail(ui.failure);
+};
+
 const addHandlers = () => {
  $('#sign-up').on('submit', onSignUp);
  $('#sign-in').on('submit', onSignIn);
@@ -107,6 +126,8 @@ const addHandlers = () => {
  $('body').on('click', '.program-button', onGetChannelProg);
  $('.delete').on('click', onDeleteChannel);
  $('.index').on('click', onIndexChannels);
+ $('.vote-program-button').on('click', onUpdateVoteProg);
+ $('.vote-ads-button').on('click', onUpdateVoteAds);
 };
 
 module.exports = {

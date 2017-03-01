@@ -153,6 +153,76 @@ const deleteChannel = function (channelDelete) {
    });
  };
 
+ const postVote = function (data) {
+   return new Promise((resolve, reject) => {
+   return $.ajax({
+     url: app.host + "/votes",
+     method: 'POST',
+     data: {
+       votes: {
+       data: data,
+     },
+       success: (response) => {
+         resolve(response);
+       },
+       error: (error) => {
+         reject(error);
+
+       },
+     },
+     });
+   });
+ };
+
+ const updateVoteProg = function (data) {
+   console.log(data.votes.id);
+   return new Promise((resolve, reject) => {
+   return $.ajax({
+     url: app.host + "/votes/" + data.votes.id,
+     method: 'PATCH',
+     headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+     data: {
+       vote: {
+       "user_id": app.user.id,
+       "channel_id": data.name,
+       "ads": false,
+       }
+     },
+       success: (response) => {
+         resolve(response);
+       },
+       error: (error) => {
+         reject(error);
+       },
+     });
+   });
+ };
+
+ const updateVoteAds = function (data) {
+   console.log(data.channel.id);
+   return new Promise((resolve, reject) => {
+   return $.ajax({
+     url: app.host + "/votes/" + data.vote.id,
+     method: 'PATCH',
+     data: {
+       vote: {
+       //"userID": data.id,
+       "channel_id": data.id,
+       "ads": true,
+       }
+     },
+       success: (response) => {
+         resolve(response);
+       },
+       error: (error) => {
+         reject(error);
+       },
+     });
+   });
+ };
+
 
 module.exports = {
   signUp,
@@ -165,4 +235,7 @@ module.exports = {
   updateChannelProg,
   deleteChannel,
   indexChannels,
+  updateVoteProg,
+  updateVoteAds,
+  postVote,
 };

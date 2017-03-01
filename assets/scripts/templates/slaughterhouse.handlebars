@@ -18,12 +18,11 @@ to { text-shadow: 0 0 20px red; }
 }
 </style>
 
-
 <ul>
 {{#each channels as |channel| }}
   <li>{{channel.name}}
     {{#if channel.ads}}
-    <button class="btn btn-danger"></button>
+    <button class="btn btn-danger"></button> 
     {{/if}}
     {{#unless channel.ads}}
     <button class="btn btn-success"></button>

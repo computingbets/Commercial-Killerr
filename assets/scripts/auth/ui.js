@@ -26,6 +26,8 @@ const signInSuccess = (data) => {
  console.log(app.user);
  $('#open-sign-in').modal('hide');
  $('#sign-in-up-success').modal('show');
+ $('.vote-program-button').show();
+ $('.vote-ads-buttonds').show();
 };
 
 const signOutSuccess = () => {
@@ -83,6 +85,16 @@ const indexSuccess = function (data) {
   $('.slaughterhouseFill').html(slaughterhouse(data));
 };
 
+// const signInDisplayVotes = function() {
+//   $('.vote-program-button').show();
+//   $('.vote-ads-buttonds').show();
+// };
+
+const postVoteSuccess = function (data) {
+  console.log(data);
+  console.log('postVote')
+};
+
 module.exports = {
  success,
  failure,
@@ -94,4 +106,5 @@ module.exports = {
  updateChannelProgSuccess,
  deleteChannelSuccess,
  indexSuccess,
+ postVoteSuccess,
 };
