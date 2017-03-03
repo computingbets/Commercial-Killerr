@@ -159,9 +159,9 @@ const deleteChannel = function (channelDelete) {
      url: app.host + "/votes",
      method: 'POST',
      data: {
-       votes: {
-       data: data,
-     },
+       vote: {
+       user_id: app.user.idea
+      },
        success: (response) => {
          resolve(response);
        },
