@@ -1,31 +1,8 @@
-<<<<<<< HEAD
-<style type="text/css">
-
-  .slaughterhouseTitle {
--webkit-animation-duration: 1350ms;
--webkit-animation-name: glow;
--webkit-animation-direction: alternate;
--webkit-animation-iteration-count: infinite;
-animation-duration: 1350ms;
-animation-name: glow;
-animation-direction: alternate;
-animation-iteration-count: infinite;
-
-}
-
-@-webkit-keyframes glow {
-from { text-shadow: 0 0 0px red; }
-to { text-shadow: 0 0 20px red; }
-}
-</style>
-
-=======
->>>>>>> parent of b7606ea... chain .then indexchannel to getChannelAds/prog. UI display Slaughterhouse div and style on ui.indexSuccess
 <ul>
 {{#each channels as |channel| }}
   <li>{{channel.name}}
     {{#if channel.ads}}
-    <button class="btn btn-danger"></button> 
+    <button class="btn btn-danger"></button>
     {{/if}}
     {{#unless channel.ads}}
     <button class="btn btn-success"></button>
