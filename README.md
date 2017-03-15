@@ -10,12 +10,7 @@ there is a commercial and the indicator will let the user know when to avoid
 that channel.
 
 Commercial Killerr uses Javascript and Ruby on Rails in the front and back ends,
-respectively. The front end utilized Google Fonts as well as both giphs and
-images found on Google. The front end also takes advantage of JS native
-promises to essentially make asynchronous api calls execute in order. What is
-seen on the page is both an HTML file and a relatively hefty user interface that
-displays things like a counter and user achievement badges when particular JS
-functions are executed.
+respectively. The front end utilized Google Fonts as well as giphs, static images, animated fonts, and imports from Soundcloud.com. What is seen on the page is both an HTML file and a relatively hefty user interface (coded modularly) that displays things like a points/minutes-killed-counter, a numerically ordered channel index, and user achievement badges. These UI features are displayed when particular JS functions are executed. The front end also takes advantage of native JS promises to essentially make asynchronous API calls execute in order.
 
 Ruby on Rails composes the back end. This developer took advantage of and
 implemented Rails-provided scaffolding. It is a dream for a front end developer
@@ -24,7 +19,8 @@ this app is a custom route that allows the user to update the commercial state o
 the input channel by channel number (name in the PSQL database) instead of
 channel ID (another column in the PSQL database). An example of this route in
 action can be seen in the app when a channel is submitted and the status buttons
-pop up on screen. They display the channel ID and are negligable to the user.
+pop up on screen. Another addition to the back-end is the display of the organized
+channel number data. 
 As mentioned, the database is a PSQL database. It contains one table. PSQL
 remains a preffered database by this developer for its ease of use and simple
 configuration.
